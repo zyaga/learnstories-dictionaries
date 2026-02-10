@@ -150,33 +150,27 @@ for file in "${DICT_FILES[@]}"; do
   echo "  - $file ($SIZE)"
 done
 
-# Calculate MD5 checksums
+# Calculate MD5 checksums and update version.json
 echo -e "\n${YELLOW}Calculating MD5 checksums...${NC}"
-declare -A MD5_CHECKSUMS
-for file in "${DICT_FILES[@]}"; do
-  LANG=$(basename "$(dirname "$file")")
-  MD5=$(md5 -q "$file")
-  MD5_CHECKSUMS["$LANG"]="$MD5"
-  echo "  - $LANG: $MD5"
-done
-
-# Update version.json
-echo -e "\n${YELLOW}Updating version.json...${NC}"
 TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
-# Create temporary version.json with updated values
+# Create temporary version.json with updated version and timestamp
 jq --arg version "$NEW_VERSION" \
    --arg timestamp "$TIMESTAMP" \
    '.version = $version | .publishedAt = $timestamp' \
    version.json > version.json.tmp
 
-# Update each dictionary's version, URL, and MD5
-for lang in "${!MD5_CHECKSUMS[@]}"; do
-  MD5="${MD5_CHECKSUMS[$lang]}"
-  jq --arg lang "$lang" \
+# Calculate MD5 and update each dictionary
+for file in "${DICT_FILES[@]}"; do
+  LANG=$(basename "$(dirname "$file")")
+  MD5=$(md5 -q "$file")
+  echo "  - $LANG: $MD5"
+
+  # Update this dictionary's metadata in version.json
+  jq --arg lang "$LANG" \
      --arg version "$NEW_VERSION" \
      --arg md5 "$MD5" \
-     --arg url "https://github.com/zyaga/learnstories-dictionaries/releases/download/v${NEW_VERSION}/${lang}.db" \
+     --arg url "https://github.com/zyaga/learnstories-dictionaries/releases/download/v${NEW_VERSION}/${LANG}.db" \
      --arg timestamp "$TIMESTAMP" \
      '.dictionaries[$lang].version = $version |
       .dictionaries[$lang].md5 = $md5 |
@@ -187,6 +181,7 @@ for lang in "${!MD5_CHECKSUMS[@]}"; do
 done
 
 mv version.json.tmp version.json
+echo -e "\n${YELLOW}Updating version.json...${NC}"
 echo -e "${GREEN}✓ version.json updated${NC}"
 
 # Update CHANGELOG.md
