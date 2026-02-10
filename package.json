@@ -1,0 +1,22 @@
+{
+  "name": "learnstories-dictionaries",
+  "version": "1.0.0",
+  "description": "Dictionary files for LearnStories language learning app",
+  "private": true,
+  "scripts": {
+    "release": "bash scripts/release.sh",
+    "release:minor": "bash scripts/release.sh --type minor",
+    "release:patch": "bash scripts/release.sh --type patch",
+    "release:major": "bash scripts/release.sh --type major"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zyaga/learnstories-dictionaries.git"
+  },
+  "license": "SEE LICENSE IN README.md",
+  "keywords": [
+    "dictionaries",
+    "language-learning",
+    "l10n"
+  ]
+}

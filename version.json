@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "publishedAt": "2026-02-10T00:00:00Z",
+  "dictionaries": {
+    "ja": {
+      "version": "1.0.0",
+      "sizeBytes": 77332480,
+      "url": "https://github.com/zyaga/learnstories-dictionaries/releases/download/v1.0.0/ja.db",
+      "md5": "2ea9b5103cb187e48835a46afe736bd1",
+      "lastModified": "2026-02-09T09:45:00Z",
+      "source": "JMdict (EDRDG) CC BY-SA 4.0",
+      "entries": 180542
+    },
+    "zh": {
+      "version": "1.0.0",
+      "sizeBytes": 26779648,
+      "url": "https://github.com/zyaga/learnstories-dictionaries/releases/download/v1.0.0/zh.db",
+      "md5": "48ba1194bf3464da321a2cb8f1f61850",
+      "lastModified": "2026-02-09T09:45:00Z",
+      "source": "CC-CEDICT (MDBG) CC BY-SA 3.0",
+      "entries": 120384
+    },
+    "ko": {
+      "version": "1.0.0",
+      "sizeBytes": 8642560,
+      "url": "https://github.com/zyaga/learnstories-dictionaries/releases/download/v1.0.0/ko.db",
+      "md5": "d4b541fe008eaece66377fab4a3a468a",
+      "lastModified": "2026-02-09T09:45:00Z",
+      "source": "KRDICT (NIKL) CC BY-SA",
+      "entries": 45230
+    },
+    "es": {
+      "version": "1.0.0",
+      "sizeBytes": 95936512,
+      "url": "https://github.com/zyaga/learnstories-dictionaries/releases/download/v1.0.0/es.db",
+      "md5": "284963f536e279c6eea0e23c7ae22c9f",
+      "lastModified": "2026-02-09T09:45:00Z",
+      "source": "doozan/spanish_data (Wiktionary) CC BY-SA",
+      "entries": 256789
+    },
+    "it": {
+      "version": "1.0.0",
+      "sizeBytes": 73666560,
+      "url": "https://github.com/zyaga/learnstories-dictionaries/releases/download/v1.0.0/it.db",
+      "md5": "a0269e5eb886df0e631a899c2c1b621d",
+      "lastModified": "2026-02-09T09:45:00Z",
+      "source": "Kaikki.org (English Wiktionary) CC BY-SA",
+      "entries": 198456
+    },
+    "ru": {
+      "version": "1.0.0",
+      "sizeBytes": 9781248,
+      "url": "https://github.com/zyaga/learnstories-dictionaries/releases/download/v1.0.0/ru.db",
+      "md5": "5a63381bf6c63d722d658b5c530f56eb",
+      "lastModified": "2026-02-09T09:45:00Z",
+      "source": "OpenRussian.org CC BY-SA 4.0",
+      "entries": 87234
+    }
+  }
+}
